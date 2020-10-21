@@ -8,15 +8,15 @@ public class ArrayReversal {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int[] numbers = new int[5];
+        int length = input.nextInt();
+        char[] symbols = new char[length];
 
-        System.out.println("Enter numbers: ");
-        for (int index = 0; index < numbers.length; index++) {
-            numbers[index] = input.nextInt();
+        for (int index = length - 1; index >= 0; index--) {
+            symbols[index] = input.next().charAt(0);
         }
-
-        String numbersAsString = Arrays.toString(numbers);
-        System.out.println("Numbers: " + numbersAsString);
+        System.out.println();
+        String symbolsAsString = Arrays.toString(symbols);
+        System.out.println("Reversed symbols: " + symbolsAsString);
     }
 
 }
