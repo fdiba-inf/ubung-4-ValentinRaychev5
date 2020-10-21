@@ -3,24 +3,29 @@ package exercise4;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import sun.security.util.Length;
-
 public class MaxElement {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int[] numbers = new int[5];
+        int length = input.nextInt();
+        double[] numbers = new double[length];
+        double currentNum = 0.0;
 
-        System.out.println("Enter numbers: ");
-        for (int index = 0; index < numbers.length; index++) {
+        for (int index = 0; index < length; index++) {
             numbers[index] = input.nextInt();
+            if (index == 0) {
+              currentNum = numbers[index];
+            }
+            else {
+              if  (numbers[index] > currentNum)  {
+                currentNum = numbers[index];
+              }
+            }
+
         }
-        for (int i = 0; i <numbers.length; i++)  {
-          String space = "";
-          System.out.println(space + numbers[i]);
-          space += " ";
-        }
+        System.out.println("Max number: " + currentNum);
+
     }
 
 }
